@@ -13,17 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui.theme
+package com.example.androiddevchallenge.ui.page.detail
 
-import androidx.compose.ui.graphics.Color
+import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-val purple200 = Color(0xFFBB86FC)
-val purple500 = Color(0xFF6200EE)
-val purple700 = Color(0xFF3700B3)
-val teal200 = Color(0xFF03DAC5)
-
-val blueGreyDark = Color(0xFF000A12)
-val blueGrey = Color(0xFF263238)
-val blueGreyLight = Color(0x4F5B62)
-val background = Color(0xFFF8F8F8)
-val filterColor = Color(0x32000000)
+@HiltViewModel
+class DetailViewModel @Inject constructor() : ViewModel()

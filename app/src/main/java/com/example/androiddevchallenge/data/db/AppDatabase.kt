@@ -13,17 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui.theme
+package com.example.androiddevchallenge.data.db
 
-import androidx.compose.ui.graphics.Color
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import com.example.androiddevchallenge.data.dto.Pet
 
-val purple200 = Color(0xFFBB86FC)
-val purple500 = Color(0xFF6200EE)
-val purple700 = Color(0xFF3700B3)
-val teal200 = Color(0xFF03DAC5)
+@Database(entities = [Pet::class], version = 1)
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun petDao(): PetDao
 
-val blueGreyDark = Color(0xFF000A12)
-val blueGrey = Color(0xFF263238)
-val blueGreyLight = Color(0x4F5B62)
-val background = Color(0xFFF8F8F8)
-val filterColor = Color(0x32000000)
+    companion object {
+        const val TABLE_PET = "Pet"
+    }
+}

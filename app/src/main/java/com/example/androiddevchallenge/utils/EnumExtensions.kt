@@ -13,17 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui.theme
+package com.example.androiddevchallenge.utils
 
-import androidx.compose.ui.graphics.Color
+import android.util.Log
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
-val purple200 = Color(0xFFBB86FC)
-val purple500 = Color(0xFF6200EE)
-val purple700 = Color(0xFF3700B3)
-val teal200 = Color(0xFF03DAC5)
+inline fun <reified E : Enum<E>> E.asString(): String {
+    return Json.encodeToString(this).removeSurrounding("\"")
+}
 
-val blueGreyDark = Color(0xFF000A12)
-val blueGrey = Color(0xFF263238)
-val blueGreyLight = Color(0x4F5B62)
-val background = Color(0xFFF8F8F8)
-val filterColor = Color(0x32000000)
+inline fun <reified E : Enum<E>> String.asEnum(): E? {
+    try {
+        return Json.decodeFromString("\"$this\"")
+    } catch (e: Exception) {
+        Log.e("EnumExt", "cannot find enum for $this", e)
+    }
+    return null
+}

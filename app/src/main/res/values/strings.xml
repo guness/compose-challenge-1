@@ -9,5 +9,15 @@
       or implied. See the License for the specific language governing permissions and limitations under
       the License.
       -->
-    <string name="app_name">AndroidDevChallenge</string>
+    <string name="app_name">Petvilla</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+
+    <string name="x_months">%d Months</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="adopt_me">Adopt Me</string>
 </resources>
